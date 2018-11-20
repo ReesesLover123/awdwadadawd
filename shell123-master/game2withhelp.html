@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img {
+            height: 250px;
+            width: 200px;
+            border: 2px solid blue;
+            border-radius: 25px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+           p {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        #counter {
+            font-family: 'Raleway', sans-serif;
+            position:absolute;
+            right: 0px;
+            
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script>
+
+        var alpha = document.getElementById("1");
+        var beta = document.getElementById("2");
+        var charlie = document.getElementById("3");
+        var delta = document.getElementById("counter");
+        var echo = 0;
+        var foxtrot = 0;
+
+        function refresh() {
+            var reset = document.getElementById("reset");
+            reset.classList.remove('hide');
+        }
+
+        function reload() {
+            location.reload();
+        }
+
+
+        function shasell() {
+            var correct = (Math.floor(Math.random() * 3 + 1));
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            var results = document.getElementById("results");
+            var counter = document.getElementById("counter");
+
+            alpha.src = "wrong.jpg";
+            beta.src = "wrong.jpg";
+            charlie.src = "wrong.jpg";
+
+            if ((correct == 1)) {
+                echo += 1;
+                foxtrot += 1; 
+                document.getElementById("1").src = "right.jpg"
+                document.getElementById("results").innerHTML = "You chose correct!"
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+                
+            } else if ((correct == 2)) {
+                foxtrot += 1;
+                document.getElementById("2").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            } else if ((correct == 3)) {
+                foxtrot += 1; 
+                document.getElementById("3").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            }
+
+        }
+        function sashay() {
+            var correct = (Math.floor(Math.random() * 3 + 1));
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            var results = document.getElementById("results")
+            alpha.src = "wrong.jpg";
+            beta.src = "wrong.jpg";
+            charlie.src = "wrong.jpg";
+            if ((correct == 1)) {
+                foxtrot += 1; 
+                document.getElementById("1").src = "right.jpg"
+                document.getElementById("results").innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            } else if ((correct == 2)) {
+                echo += 1;
+                foxtrot += 1; 
+                document.getElementById("2").src = "right.jpg";
+                results.innerHTML = "You chose correct!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            } else if ((correct == 3)) {
+                foxtrot += 1; 
+                document.getElementById("3").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+            }
+
+        }
+        function sashayn() {
+            var correct = (Math.floor(Math.random() * 3 + 1));
+            var alpha = document.getElementById("1");
+            var beta = document.getElementById("2");
+            var charlie = document.getElementById("3");
+            var results = document.getElementById("results")
+            alpha.src = "wrong.jpg";
+            beta.src = "wrong.jpg";
+            charlie.src = "wrong.jpg";
+            if ((correct == 1)) {
+                foxtrot += 1; 
+                document.getElementById("1").src = "right.jpg"
+                document.getElementById("results").innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+
+            } else if ((correct == 2)) {
+                foxtrot += 1; 
+                document.getElementById("2").src = "right.jpg";
+                results.innerHTML = "You chose incorrectly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+
+            } else if ((correct == 3)) {
+                echo += 1; 
+                foxtrot += 1; 
+                document.getElementById("3").src = "right.jpg";
+                results.innerHTML = "You chose correctly!";
+                counter.innerHTML = `You got it right ${echo}/${foxtrot} times!`
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="counter">You've found it this many times!</div>
+      <div class="volcano"><img src="shell.jpg" id="1" onclick="shasell()"/><img src="shell.jpg" onclick="sashay()" id="2"/><img src="shell.jpg" onclick="sashayn()" id="3"/></div> 
+    <p id="results">Where is the pearl located?</p>
+    <button class="hide" id="reset" onclick="reload()">Are you ready to try again?</button>
+    <p onclick="refresh()">Click me to reset!</p>
+    </body>
+</html>
